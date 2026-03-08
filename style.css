@@ -1,0 +1,614 @@
+/* GLOBAL VARIABLES */
+:root {
+  --bg-color: #0A0A0A;
+  --text-color: #FFFFFF;
+  --accent-color: #007BFF;
+  --font-heading: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --max-width: 900px;
+}
+
+/* RESET & BASE */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-mono);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  /* Inter Extra Bold */
+  margin: 0;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  /* High contrast, tight tracking for corporate minimalism */
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+p {
+  margin: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* LAYOUT */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 5vw;
+  /* Responsive horizontal padding */
+}
+
+/* Ensure sections stretch vertically and space out appropriately */
+section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 0;
+}
+
+/* 1. HERO SECTION (Terminal Layout) */
+.terminal-hero {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 55%;
+  z-index: 2;
+}
+
+.hero-greeting {
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 300;
+  /* Thin, elegant greeting like the reference image */
+  text-transform: none;
+  letter-spacing: -2px;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.hero-heading {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  margin-bottom: 2rem;
+  line-height: 1.2;
+  color: #DDD;
+}
+
+.hero-subtext {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: #A0A0A0;
+  max-width: 90%;
+  line-height: 1.7;
+}
+
+.scroll-action {
+  margin-top: 3rem;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  letter-spacing: -1px;
+  display: inline-block;
+}
+
+/* Terminal Visual Element */
+.hero-visual {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.terminal-window {
+  width: 100%;
+  max-width: 500px;
+  background-color: #1E1E1E;
+  border-radius: 8px;
+  border: 1px solid #333;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  transform: rotateY(-10deg) rotateX(5deg);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.hero-visual:hover .terminal-window {
+  transform: rotateY(0deg) rotateX(0deg) translateY(-10px);
+  box-shadow: 0 40px 80px rgba(0, 123, 255, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.terminal-header {
+  background-color: #2D2D2D;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #111;
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.btn.red {
+  background-color: #ff5f56;
+}
+
+.btn.yellow {
+  background-color: #ffbd2e;
+}
+
+.btn.green {
+  background-color: #27c93f;
+}
+
+.terminal-title {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: #888;
+  margin-right: 48px;
+  /* Offset to center title against buttons */
+}
+
+.terminal-body {
+  padding: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #00FF00;
+  /* Hacker green */
+  min-height: 250px;
+  white-space: pre-wrap;
+  /* Keeps line breaks */
+}
+
+/* Blinking cursor for the terminal */
+.typed-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1.1em;
+  background-color: #00FF00;
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+  margin-left: 5px;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Styles for specific typed output lines */
+.term-cmd {
+  color: #56b6c2;
+}
+
+.term-out {
+  color: #abb2bf;
+}
+
+.term-err {
+  color: #e06c75;
+}
+
+.term-suc {
+  color: #98c379;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .terminal-hero {
+    flex-direction: column;
+    text-align: left;
+    gap: 3rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-visual {
+    width: 100%;
+    transform: none;
+  }
+
+  .terminal-window {
+    transform: none;
+  }
+}
+
+/* 2. THE "IMPACT" NODE */
+.impact-section {
+  padding: 2rem 0;
+  /* Reduced padding to fit better with the GIF */
+  justify-content: center;
+}
+
+.impact-heading {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  /* Slightly smaller so it doesn't push the GIF down too much */
+  margin-bottom: 1.5rem;
+  /* Reduced gap */
+}
+
+.impact-media {
+  max-width: 800px;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  /* Bordes suaves */
+  overflow: hidden;
+  border: 1px solid #333;
+  /* Estilo alineado con el minimalismo */
+  background-color: #111;
+  /* Color de fondo por si tarda en cargar */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  /* Slight shadow to lift it up */
+}
+
+.impact-gif {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.9;
+  transition: opacity 0.3s ease, border-color 0.3s ease;
+}
+
+.impact-media:hover {
+  border-color: #555;
+}
+
+.impact-media:hover .impact-gif {
+  opacity: 1;
+}
+
+.impact-body {
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  max-width: 750px;
+  color: #CCCCCC;
+}
+
+/* 3. SERVICES (The Technical Trinity) */
+.services-section {
+  justify-content: center;
+}
+
+/* Services Image Viewer */
+.service-image-viewer {
+  width: 100%;
+  height: 250px;
+  background-color: #0d0d0d;
+  border: 1px solid #1f1f1f;
+  border-radius: 4px;
+  margin-bottom: 4rem;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewer-placeholder {
+  position: absolute;
+  color: #444;
+  font-family: var(--font-mono);
+  /* Technical look */
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  z-index: 1;
+  transition: opacity 0.5s ease;
+}
+
+.hidden-viewer-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+  /* Enfoca la esquina superior izquierda (menús, paneles) */
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s ease;
+  filter: grayscale(80%) contrast(1.2);
+  /* Dark, corporate tech feel */
+}
+
+.hidden-viewer-img.active {
+  opacity: 0.6;
+  /* Don't want it 100% bright, keep the dark theme cohesive */
+}
+
+.hidden-viewer-img.active:hover {
+  opacity: 0.8;
+  filter: grayscale(20%) contrast(1.2);
+  transform: scale(1.05);
+  /* Efecto de expansión al tener el ratón encima */
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  border-top: 1px solid #333;
+  /* Minimal separator */
+  padding-top: 3rem;
+}
+
+.service-icons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  min-height: 90px;
+  /* Fixed min-height to ensure all headers align even if the AI column wraps to 2 lines */
+}
+
+.brand-icon {
+  width: 42px;
+  /* Aumentado desde 32px */
+  height: 42px;
+  /* Aumentado desde 32px */
+  /* SimpleIcons are black by default. Invert makes them white. Opacity softens them. */
+  filter: invert(1) opacity(0.6);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.brand-icon:hover {
+  filter: invert(1) opacity(1);
+  transform: translateY(-3px) scale(1.1);
+}
+
+.text-icon {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  color: #fff;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  transition: opacity 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  user-select: none;
+}
+
+.text-icon:hover {
+  opacity: 1;
+  border-color: #333;
+  /* Minimal border to distinguish it */
+  border-radius: 4px;
+  transform: translateY(-3px) scale(1.1);
+}
+
+.service-column h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.service-column p {
+  color: #A0A0A0;
+  font-size: 1rem;
+  max-width: 250px;
+}
+
+/* 4. SELECTED PROJECTS */
+.projects-section {
+  justify-content: center;
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-card {
+  padding: 3rem;
+  background-color: transparent;
+  /* Raw background */
+  border: 1px solid #333;
+  transition: opacity 0.3s ease, border-color 0.3s ease;
+  cursor: default;
+  /* Not clickable unless specifically linked, but requested hover effect */
+}
+
+.project-card:hover {
+  opacity: 0.6;
+  border-color: #555;
+}
+
+.project-card h3 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: 1rem;
+}
+
+.project-card p {
+  color: var(--accent-color);
+  font-size: 1rem;
+}
+
+.project-media {
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #333;
+  background-color: #111;
+  margin-top: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.project-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0.85;
+  transition: opacity 0.4s ease, transform 0.6s ease;
+}
+
+.project-card:hover .project-img {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+/* Rack Before/After Hover Effect */
+.rack-media {
+  position: relative;
+}
+
+.rack-media .rack-img-before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.rack-media .rack-img-after {
+  position: relative;
+  z-index: 1;
+  transition: opacity 0.5s ease;
+}
+
+.project-card:hover .rack-media .rack-img-after {
+  opacity: 0;
+}
+
+/* 5. FOOTER / CONNECTION */
+footer {
+  padding: 6rem 5vw 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  text-align: center;
+  border-top: 1px solid #333;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem 4rem;
+}
+
+.footer-links a {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  /* override default a:hover */
+  color: #FFFFFF;
+  /* High contrast interactive change */
+}
+
+.footer-phrase {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  color: #444;
+  /* Very subtle text at the bottom */
+  font-size: 1.25rem;
+  margin-top: 2rem;
+}
+
+/* RESPONSIVE AJDUSTMENTS */
+@media (max-width: 768px) {
+  section {
+    padding: 6rem 0;
+    /* Slightly tighter on mobile */
+  }
+}
+
+/* LANGUAGE SWITCHER */
+.lang-toggle {
+  position: absolute;
+  top: 2rem;
+  right: 5vw;
+  background: transparent;
+  border: 1px solid #333;
+  color: var(--text-color);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease, border-color 0.3s ease;
+  z-index: 100;
+}
+
+.lang-toggle:hover {
+  opacity: 0.7;
+  border-color: #555;
+}
+
+@media (max-width: 768px) {
+  .lang-toggle {
+    top: 1rem;
+    /* Adjust for mobile spacing */
+  }
+}

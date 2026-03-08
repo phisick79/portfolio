@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>José Antonio Luque Cruz | Infrastructure Architect & Automation Engineer</title>
+    <meta name="description"
+        content="Portfolio of José Antonio Luque Cruz. Desplegando redes críticas y programando ecosistemas autónomos.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&family=JetBrains+Mono&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- LANGUAGE SWITCHER -->
+        <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="globe-icon">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                </path>
+            </svg>
+            <span id="lang-text">EN</span>
+        </button>
+
+        <!-- 1. HERO SECTION (Terminal Layout) -->
+        <section id="hero" class="hero-section terminal-hero">
+            <div class="hero-content">
+                <h1 class="hero-greeting" data-es="Sistemas Críticos." data-en="Critical Systems.">Sistemas Críticos.
+                </h1>
+                <h2 class="hero-heading" data-es="ARQUITECTURA DE INFRAESTRUCTURA Y AUTOMATIZACIÓN."
+                    data-en="INFRASTRUCTURE ARCHITECTURE & AUTOMATION.">ARQUITECTURA DE INFRAESTRUCTURA Y
+                    AUTOMATIZACIÓN.</h2>
+                <p class="hero-subtext"
+                    data-es="Desplegando redes críticas (CCNA) y programando ecosistemas autónomos (n8n/Python/Ollama)."
+                    data-en="Deploying critical networks (CCNA) and programming autonomous ecosystems (n8n/Python/Ollama).">
+                    Desplegando redes críticas (CCNA) y programando ecosistemas autónomos (n8n/Python/Ollama).</p>
+                <a href="#projects" class="scroll-action" aria-label="Scroll to Selected Work" data-es="↓ Ver Proyectos"
+                    data-en="↓ Selected Work">
+                    ↓ Selected Work
+                </a>
+            </div>
+
+            <!-- Terminal Visual Element -->
+            <div class="hero-visual">
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="btn red"></span><span class="btn yellow"></span><span class="btn green"></span>
+                        </div>
+                        <span class="terminal-title">j.luque@infrastructure:~</span>
+                    </div>
+                    <div class="terminal-body" id="typed-terminal">
+                        <!-- Content injected via JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. THE "IMPACT" NODE -->
+        <section id="impact" class="impact-section">
+            <h2 class="impact-heading" data-es="DE 22 COLUMNAS A 5." data-en="FROM 22 COLUMNS TO 5.">DE 22 COLUMNAS A 5.
+            </h2>
+
+            <div class="impact-media">
+                <img src="excel.gif" alt="Demostración de Impacto Contable" class="impact-gif">
+            </div>
+
+            <p class="impact-body"
+                data-es="Optimización radical de procesos contables. Lógica algorítmica aplicada para eliminar la fatiga operativa y el error humano en entornos de alta densidad de datos."
+                data-en="Radical optimization of accounting processes. Algorithmic logic applied to eliminate operational fatigue and human error in high data-density environments.">
+                Optimización radical de procesos contables. Lógica algorítmica aplicada para eliminar la fatiga
+                operativa y el error humano en entornos de alta densidad de datos.</p>
+        </section>
+
+        <!-- 3. SERVICES (The Technical Trinity) -->
+        <section id="services" class="services-section">
+
+            <!-- Dynamic Image Viewer (Hover Interaction) -->
+            <div class="service-image-viewer" id="serviceImageViewer">
+                <div class="viewer-placeholder" id="viewerPlaceholder"
+                    data-es="[ INTERFAZ INACTIVA - SELECCIONE UN NODO ]"
+                    data-en="[ INTERFACE INACTIVE - SELECT A NODE ]">[ INTERFAZ INACTIVA - SELECCIONE UN NODO ]</div>
+                <img id="dynamicImage" src="" alt="Active Service" class="hidden-viewer-img">
+            </div>
+
+            <div class="services-grid">
+                <div class="service-column">
+                    <div class="service-icons">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/cisco.svg" alt="Cisco"
+                            class="brand-icon" title="Cisco" data-image="cisco-rack.png" data-position="center center">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/fortinet.svg" alt="Fortinet"
+                            class="brand-icon" title="Fortinet" data-image="fortinet-rack.jpg"
+                            data-position="bottom center">
+                    </div>
+                    <h3 data-es="[HARDWARE]" data-en="[HARDWARE]">[HARDWARE]</h3>
+                    <p data-es="Cisco, Fortinet, Palo Alto, Fiber Optics. Gestión de Racks Tier-1."
+                        data-en="Cisco, Fortinet, Palo Alto, Fiber Optics. Tier-1 Rack Management.">Cisco, Fortinet,
+                        Palo Alto, Fiber Optics. Gestión de Racks Tier-1.</p>
+                </div>
+                <div class="service-column">
+                    <div class="service-icons">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/python.svg" alt="Python"
+                            class="brand-icon" title="Python" data-image="python-code.png">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/n8n.svg" alt="n8n"
+                            class="brand-icon" title="n8n" data-image="n8n-workflow.png"
+                            onerror="this.src='https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-logo.svg'">
+                    </div>
+                    <h3 data-es="[LÓGICA]" data-en="[LOGIC]">[LÓGICA]</h3>
+                    <p data-es="Python, n8n Workflows, Automating Worksheets & Emails."
+                        data-en="Python, n8n Workflows, Automating Worksheets & Emails.">Python, n8n Workflows,
+                        Automating Worksheets & Emails.</p>
+                </div>
+                <div class="service-column">
+                    <div class="service-icons" style="flex-wrap: wrap;">
+                        <!-- Custom SVGs and SimpleIcons for AI Tools -->
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/ollama.svg" alt="Ollama"
+                            class="brand-icon" title="Ollama" data-image="ollama-ai.png"
+                            onerror="this.outerHTML='<span class=&quot;text-icon&quot; title=&quot;Ollama&quot;>O</span>'">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/openai.svg" alt="ChatGPT"
+                            class="brand-icon" title="ChatGPT" data-image="chatgpt-ai.png">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/googlegemini.svg" alt="Gemini"
+                            class="brand-icon" title="Gemini" data-image="gemini-ai.png">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@13/icons/anthropic.svg"
+                            alt="Claude (Anthropic)" class="brand-icon" title="Claude" data-image="claude-ai.png">
+                        <img src="file:///C:/Users/joseantonio.luque/.gemini/antigravity/scratch/portfolio/manus.svg"
+                            alt="Manus" class="brand-icon" title="Manus" data-image="manus-ai.png">
+                        <img src="file:///C:/Users/joseantonio.luque/.gemini/antigravity/scratch/portfolio/grok.svg"
+                            alt="Grok" class="brand-icon" title="Grock" data-image="grok-ai.png">
+                    </div>
+                    <h3 data-es="[IA]" data-en="[AI]">[IA]</h3>
+                    <p data-es="Prompt Engineering & Local LLMs (Ollama). Private & Secure AI Deployment."
+                        data-en="Prompt Engineering & Local LLMs (Ollama). Private & Secure AI Deployment.">Prompt
+                        Engineering & Local LLMs (Ollama). Private & Secure AI Deployment.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SELECTED PROJECTS -->
+        <section id="projects" class="projects-section">
+            <h2 class="visually-hidden" data-es="Trabajo Seleccionado" data-en="Selected Work">Selected Work</h2>
+            <div class="projects-list">
+                <article class="project-card">
+                    <h3 data-es="Acondicionamiento de Racks Empresariales" data-en="Enterprise Rack Reconditioning">
+                        Enterprise Rack Reconditioning</h3>
+                    <p data-es="(Físico/Infraestructura)" data-en="(Physical/Infrastructure)">(Físico/Infraestructura)
+                    </p>
+                    <div class="project-media rack-media">
+                        <img src="rack_bad.jpg" alt="Before Rack Reconditioning" class="project-img rack-img-before">
+                        <img src="rack_good.jpeg" alt="After Rack Reconditioning" class="project-img rack-img-after">
+                    </div>
+                </article>
+                <article class="project-card">
+                    <h3 data-es="Flujos Automatizados" data-en="Automated Workflows">Automated Workflows</h3>
+                    <p data-es="(Lógica/n8n)" data-en="(Logic/n8n)">(Lógica/n8n)</p>
+                    <div class="project-media">
+                        <img src="N8N_chat.gif" alt="Automated Workflows" class="project-img">
+                    </div>
+                </article>
+                <article class="project-card">
+                    <h3 data-es="Implementación de IA con Privacidad" data-en="Privacy-First AI Implementation">
+                        Privacy-First AI Implementation</h3>
+                    <p data-es="(Estrategia/Ollama)" data-en="(Strategy/Ollama)">(Estrategia/Ollama)</p>
+                    <div class="project-media">
+                        <img src="ollama_code.gif" alt="Privacy-First AI Implementation" class="project-img">
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </div> <!-- End Container -->
+
+    <!-- 5. FOOTER / CONNECTION -->
+    <footer id="contact">
+        <div class="footer-links">
+            <a href="https://www.linkedin.com/in/jos%C3%A9-antonio-luque-cruz-0b61981ab" target="_blank"
+                rel="noopener noreferrer">LinkedIn</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+        <p class="footer-phrase" data-es="&quot;Sistemas que fluyen. Tecnología sin fricción.&quot;"
+            data-en="&quot;Systems that flow. Technology without friction.&quot;">"Systems that flow. Technology without
+            friction."</p>
+        <p class="footer-signature" data-es="/* Construido por José Antonio Luque Cruz */"
+            data-en="/* Built by José Antonio Luque Cruz */" style="font-size: 0.8rem; color: #555; margin-top: 2rem;">
+            /* Built by José Antonio Luque Cruz */</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
